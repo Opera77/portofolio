@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    background: url('../img/fond.png');
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.outer-container {
+    position: relative;
+    width: 340px; /* Ajuste pour inclure l'espace pour l'animation */
+    height: 340px; /* Ajuste pour inclure l'espace pour l'animation */
+}
+
+.container {
+    position: relative;
+    width: 300px; /* Taille de l'image */
+    height: 300px; /* Taille de l'image */
+    margin: 20px; /* Espace autour de l'image pour l'animation */
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Rend l'image ronde */
+    z-index: 1;
+    position: relative;
+}
+
+.water-animation {
+    position: absolute;
+    top: -20px; /* Ajuste pour entourer l'image */
+    left: -20px; /* Ajuste pour entourer l'image */
+    width: 340px; /* Ajuste pour inclure l'espace pour l'animation */
+    height: 340px; /* Ajuste pour inclure l'espace pour l'animation */
+    border-radius: 50%; /* Rend l'animation ronde */
+    z-index: 0;
+    background: radial-gradient(circle, rgba(255,0,0,0.5) 20%, rgba(255,0,0,0) 60%);
+    animation: flow 3s infinite;
+    pointer-events: none;
+}
+
+@keyframes flow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
